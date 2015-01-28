@@ -1,14 +1,17 @@
 # if your compiler doesn't support hard then use 'make -i'
 # or comment out hard stuff here
 
+COMMON=-O9 -std=c99 -march=armv7-a
+
 HARD=-mfloat-abi=hard
-# unimp -mapcs-float, needs gcc 4.5
 SOFT=-mfloat-abi=soft
 SOFTFP=-mfloat-abi=softfp
 NEON=-mfpu=neon
 VFP=-mfpu=vfpv3-d16
 VECTOR=-ftree-vectorize
-COMMON=-O9 -std=c99 -march=armv7-a
+# unimp -mapcs-float, needs gcc 4.5
+APCS= -mapcs-float
+
 
 # Command line arguments to the test program
 # -------------------------------------------
